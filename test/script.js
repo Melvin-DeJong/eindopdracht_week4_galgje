@@ -40,6 +40,7 @@ const cleanInputValue = function () {
 // display the win game class
 const winTheGame = function () {
   document.querySelector(".win").style.display = "block";
+  confetti.start();
   gameOver = true;
 };
 
@@ -120,6 +121,7 @@ function SetToInitialValue() {
   gameOver = false;
   document.querySelector(".win").style.display = "none";
   document.querySelector(".lose").style.display = "none";
+  confetti.stop();
   cleanInputValue();
 
   word = randomWordPicker(wordList).split("");
