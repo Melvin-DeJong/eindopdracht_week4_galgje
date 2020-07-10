@@ -1,8 +1,13 @@
-h1, h2, h3, p, button, input{
+h1,
+h2,
+h3,
+p,
+button,
+input {
   font-family: fantasy;
 }
 
-.container{
+.container {
   margin: 10%;
   display: flex;
   align-items: center;
@@ -11,7 +16,6 @@ h1, h2, h3, p, button, input{
   border-radius: 10px;
   border-style: solid;
 }
-
 
 .buttons {
   margin-top: 20px;
@@ -25,11 +29,11 @@ h1, h2, h3, p, button, input{
   color: white;
 }
 
-.buttons .guess:hover{
+.buttons .guess:hover {
   background-color: lightgreen;
 }
 
-.buttons .restart:hover{
+.buttons .restart:hover {
   background-color: lightgoldenrodyellow;
 }
 
@@ -38,7 +42,8 @@ h1, h2, h3, p, button, input{
   color: black;
 }
 
-.buttons .guess, .restart{
+.buttons .guess,
+.restart {
   width: 100px;
   font-size: large;
   border-radius: 10px;
@@ -52,8 +57,56 @@ h1, h2, h3, p, button, input{
   display: none;
 }
 
+.win-image {
+  width: 300px;
+  height: 300px;
+  animation-name: tilt-in-right-1;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes tilt-in-right-1 {
+  0% {
+    -webkit-transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+    transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg) translateX(0) skewX(0deg);
+    transform: rotateX(0deg) translateX(0) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+.win-animation {
+  color: #3079ed;
+  animation-name: focus-in-contract;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 1em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
 .win h2 {
   color: red;
+  font-size: 28px;
+  text-align: center;
 }
 
 .lose h2 {
