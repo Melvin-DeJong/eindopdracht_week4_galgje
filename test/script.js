@@ -60,6 +60,15 @@ const updateTriesDisplay = function (tries) {
   document.querySelector(".lives span").innerHTML = maxAmount - tries;
 };
 
+// checkt wether user wins or loses
+const checkWinOrLose = () => {
+  if (checkIfWordIsInput(word, inputs)) {
+    winTheGame();
+  } else if (tries >= 5) {
+    loseTheGame();
+  }
+};
+
 // Check if letter is not in the word and display the wrong letter
 const checkIfInputIncludesWrongLetter = function (word, inputs) {
   let wrongLetters = inputs.filter(function (letter) {
@@ -104,15 +113,6 @@ const guessIfLetterIsCorrect = function () {
   checkIfInputIncludesWrongLetter(word, inputs);
 
   checkWinOrLose();
-};
-
-// checkt wether user wins or loses
-const checkWinOrLose = () => {
-  if (checkIfWordIsInput(word, inputs)) {
-    winTheGame();
-  } else if (tries >= 5) {
-    loseTheGame();
-  }
 };
 
 // Set everything to initial value
