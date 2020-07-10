@@ -115,16 +115,8 @@ const checkWinOrLose = () => {
   }
 };
 
-// Get the name of the player (omvormen tot promt alert etc)
-function getThePlayer(player) {
-  let play = document.getElementById("player1");
-  play = play + "We are about to start the game";
-  return play;
-}
-
 // Set everything to initial value
-function SetToInitialValue(player1) {
-  getThePlayer(player1);
+function SetToInitialValue() {
   gameOver = false;
   document.querySelector(".win").style.display = "none";
   document.querySelector(".lose").style.display = "none";
