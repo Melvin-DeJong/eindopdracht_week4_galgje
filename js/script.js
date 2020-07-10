@@ -136,3 +136,6 @@ document.addEventListener("DOMContentLoaded", function() {
     .addEventListener("click", beginTheGameWithPlayer);
   beginTheGameWithPlayer();
 });
+
+
+module.exports = functions;

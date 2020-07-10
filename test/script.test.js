@@ -1,5 +1,4 @@
-const { TestScheduler } = require("jest")
-
+const functions = require(".js/script.js");
 
 
 
