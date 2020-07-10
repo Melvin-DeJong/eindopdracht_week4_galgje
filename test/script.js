@@ -49,8 +49,14 @@ const loseTheGame = function () {
   gameOver = true;
 };
 
+// increase tries + 1
+const increaseTries = () => {
+  return ++tries;
+};
+
 // update the tries in display
 const updateTriesDisplay = function (tries) {
+  increaseTries();
   document.querySelector(".lives span").innerHTML = maxAmount - tries;
 };
 
@@ -60,6 +66,7 @@ const checkIfInputIncludesWrongLetter = function (word, inputs) {
     return !word.includes(letter);
   });
   document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(" ");
+  // return wrongLetters;
 };
 
 // check if letter is in the word and display the correct letter
@@ -72,6 +79,8 @@ const checkIfInputIsCorrect = function (word, inputLetterWords) {
     }
   });
   document.querySelector(".the_word").innerHTML = display.join(" ");
+
+  // return display;
 };
 
 // check if input user is correct or not and returns win or lose game
@@ -87,7 +96,6 @@ const guessIfLetterIsCorrect = function () {
   }
 
   if (!word.includes(inputUser)) {
-    tries++;
     updateTriesDisplay(tries);
   }
 
@@ -95,6 +103,11 @@ const guessIfLetterIsCorrect = function () {
   checkIfInputIsCorrect(word, inputs);
   checkIfInputIncludesWrongLetter(word, inputs);
 
+  checkWinOrLose();
+};
+
+// checkt wether user wins or loses
+const checkWinOrLose = () => {
   if (checkIfWordIsInput(word, inputs)) {
     winTheGame();
   } else if (tries >= 5) {
@@ -145,4 +158,6 @@ module.exports = {
   checkIfInputIsCorrect,
   checkIfWordIsInput,
   guessIfLetterIsCorrect,
+  increaseTries,
+  checkWinOrLose,
 };
