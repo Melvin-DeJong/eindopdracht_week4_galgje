@@ -1,0 +1,23 @@
+{
+  "name": "eindopdracht_week4_galgje",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melvin-DeJong/eindopdracht_week4_galgje.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Melvin-DeJong/eindopdracht_week4_galgje/issues"
+  },
+  "homepage": "https://github.com/Melvin-DeJong/eindopdracht_week4_galgje#readme",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
